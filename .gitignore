@@ -41,10 +41,19 @@ wheels/
 .DS_Store
 Thumbs.db
 
-# Large data files (optional - uncomment if CSVs are too large)
-# data/raw/*.csv
-# data/*.db
+# Large data files - stored in Box, not in Git
+data/raw/air_quality.csv
+data/raw/NYNY_BenMAP.csv
+data/*.db
+data/processed/*.csv
+
+# Keep checksums and small files
+!data/raw/checksums.txt
 
 # Temporary files
 *.log
 *.tmp
+
+# Backup files
+*_backup.md
+README_backup.md

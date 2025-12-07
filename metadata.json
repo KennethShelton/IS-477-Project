@@ -1,0 +1,186 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "NYC Air Quality and Health Outcomes Analysis",
+  "description": "An integrated analysis of air pollution levels and respiratory health outcomes across New York City boroughs. This project combines NYC Air Quality surveillance data with EnviroAtlas BenMAP health impact estimates to examine correlations between pollutant concentrations (NO2, O3, PM2.5) and acute respiratory symptoms at the borough level.",
+  "url": "https://github.com/KennethShelton/IS-477-Project",
+  "identifier": "https://github.com/KennethShelton/IS-477-Project",
+  "keywords": [
+    "air quality",
+    "public health",
+    "environmental health",
+    "respiratory symptoms",
+    "New York City",
+    "urban pollution",
+    "nitrogen dioxide",
+    "ozone",
+    "PM2.5",
+    "fine particulate matter",
+    "BenMAP",
+    "health impact assessment"
+  ],
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Kenneth Shelton",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of Illinois Urbana-Champaign"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Tianqi Fu",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of Illinois Urbana-Champaign"
+      }
+    }
+  ],
+  "dateCreated": "2025-10-06",
+  "dateModified": "2025-12-07",
+  "datePublished": "2025-12-07",
+  "inLanguage": "en-US",
+  "license": {
+    "@type": "CreativeWork",
+    "name": "MIT License",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "New York City",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "40.4774 -74.2591 40.9176 -73.7004"
+    }
+  },
+  "temporalCoverage": "2009/2023",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/zip",
+      "contentUrl": "[INSERT BOX LINK HERE]",
+      "description": "Complete project dataset including raw data, processed data, and analysis outputs"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://data.cityofnewyork.us/api/views/c3uy-2p5r/rows.csv?accessType=DOWNLOAD",
+      "name": "NYC Air Quality (Source Data)",
+      "description": "Raw air quality measurements from NYC DOHMH"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://edg.epa.gov/data/Public/ORD/EnviroAtlas/NYNY_BenMAP.csv",
+      "name": "EnviroAtlas BenMAP Results (Source Data)",
+      "description": "Health impact estimates from USDA Forest Service"
+    }
+  ],
+  "isBasedOn": [
+    {
+      "@type": "Dataset",
+      "name": "NYC Air Quality",
+      "url": "https://catalog.data.gov/dataset/air-quality",
+      "publisher": {
+        "@type": "Organization",
+        "name": "New York City Department of Health and Mental Hygiene"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "EnviroAtlas New York City BenMAP Results",
+      "url": "https://catalog.data.gov/dataset/enviroatlas-new-york-city-ny-benmap-results-by-block-group3",
+      "publisher": {
+        "@type": "Organization",
+        "name": "USDA Forest Service"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "Dataset",
+      "name": "Merged Air Quality and Health Data",
+      "description": "Borough-level integrated dataset combining mean pollutant concentrations with aggregated respiratory symptom incidences",
+      "encodingFormat": "text/csv",
+      "contentSize": "1KB",
+      "contentUrl": "data/processed/merged.csv"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Pollutant-Health Correlation Heatmap",
+      "description": "Visualization of Pearson correlation coefficients between pollutants and respiratory symptoms",
+      "encodingFormat": "image/png",
+      "contentUrl": "docs/correlation.png"
+    }
+  ],
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "Nitrogen Dioxide (NO2) Concentration",
+      "unitText": "parts per billion (ppb)",
+      "description": "Mean NO2 concentration at borough level"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Ozone (O3) Concentration",
+      "unitText": "parts per billion (ppb)",
+      "description": "Mean O3 concentration at borough level"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Fine Particulate Matter (PM2.5) Concentration",
+      "unitText": "micrograms per cubic meter (mcg/m3)",
+      "description": "Mean PM2.5 concentration at borough level"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Acute Respiratory Symptoms Incidence",
+      "unitText": "count",
+      "description": "Total estimated incidence of acute respiratory symptoms by pollutant and borough"
+    }
+  ],
+  "measurementTechnique": [
+    "Environmental monitoring stations",
+    "BenMAP health impact modeling",
+    "Census block group aggregation",
+    "Pearson correlation analysis"
+  ],
+  "funding": {
+    "@type": "MonetaryGrant",
+    "funder": {
+      "@type": "Organization",
+      "name": "University of Illinois Urbana-Champaign"
+    },
+    "name": "IS 477 Course Project"
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "NYC Air Quality Dataset",
+      "url": "https://catalog.data.gov/dataset/air-quality"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "EnviroAtlas BenMAP Results",
+      "url": "https://catalog.data.gov/dataset/enviroatlas-new-york-city-ny-benmap-results-by-block-group3"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "pandas",
+      "version": "1.5.0",
+      "url": "https://pandas.pydata.org/"
+    }
+  ],
+  "maintainer": {
+    "@type": "Person",
+    "name": "Tianqi Fu"
+  },
+  "version": "1.0",
+  "isAccessibleForFree": true,
+  "usageInfo": {
+    "@type": "CreativeWork",
+    "name": "Reproducibility Guide",
+    "url": "https://github.com/KennethShelton/IS-477-Project#reproducing"
+  }
+}
