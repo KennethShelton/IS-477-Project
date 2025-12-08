@@ -1,0 +1,13 @@
+# Additional dependencies for extras features
+# These are NOT required for core Phase 4 submission
+
+# Interactive dashboard
+plotly>=5.18.0
+
+# Automated testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0

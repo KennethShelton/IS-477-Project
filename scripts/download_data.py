@@ -10,14 +10,12 @@ import hashlib
 import urllib.request
 import sys
 
-# Data URLs
 AIR_QUALITY_URL = "https://data.cityofnewyork.us/api/views/c3uy-2p5r/rows.csv?accessType=DOWNLOAD"
 BENMAP_URL = "https://edg.epa.gov/data/Public/ORD/EnviroAtlas/NYNY_BenMAP.csv"
 
-# Expected SHA-256 checksums (update these after initial download)
 EXPECTED_CHECKSUMS = {
-    "air_quality.csv": "",  # To be filled after first download
-    "NYNY_BenMAP.csv": ""   # To be filled after first download
+    "air_quality.csv": "",
+    "NYNY_BenMAP.csv": ""
 }
 
 def calculate_sha256(filepath):

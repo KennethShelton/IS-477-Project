@@ -1,0 +1,41 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Data Value",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Data Value using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Geo Place Name",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Geo Place Name using expression value.trim()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Time Period",
+    "expression": "grel:value.match(/.*(\\d{4}).*/).get(0)",
+    "onError": "set-to-blank",
+    "newColumnName": "extracted_year",
+    "columnInsertIndex": 9,
+    "description": "Create column extracted_year at index 9 based on column Time Period using expression grel:value.match(/.*(\\d{4}).*/).get(0)"
+  }
+]

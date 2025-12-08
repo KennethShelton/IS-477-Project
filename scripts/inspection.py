@@ -13,7 +13,6 @@ for fn in files:
         out_lines.append("-")
         continue
     try:
-        # fast header + sample
         with open(fn, newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
             header = next(reader)
@@ -28,7 +27,6 @@ for fn in files:
         for r in sample:
             out_lines.append("    " + ", ".join(r[:10]) + ("..." if len(r) > 10 else ""))
 
-        # approximate row count (fast, binary read)
         count = 0
         with open(fn, 'rb') as f:
             for chunk in f:
@@ -40,7 +38,6 @@ for fn in files:
         out_lines.append(traceback.format_exc())
     out_lines.append("-")
 
-# write report
 rep_dir = os.path.join('.', 'docs')
 os.makedirs(rep_dir, exist_ok=True)
 rep_path = os.path.join(rep_dir, 'inspect_report.txt')

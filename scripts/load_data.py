@@ -4,18 +4,15 @@ import sys
 import traceback
 import csv
 
-# Simple, top-level import script that prefers pandas but falls back to csv+sqlite for small files.
 db_path = os.path.join('.', 'data', 'nyc_air_health.db')
 os.makedirs(os.path.dirname(db_path), exist_ok=True)
 
 print('Creating/opening database at', db_path)
 conn = sqlite3.connect(db_path)
 
-# try pandas first (faster for large CSVs)
 try:
     import pandas as pd
     print('Using pandas to import CSVs (fast).')
-    # import air_quality
     aq_path = os.path.join('.', 'data', 'raw', 'air_quality.csv')
     if os.path.exists(aq_path):
         print('Loading', aq_path)
@@ -25,7 +22,6 @@ try:
     else:
         print('air_quality.csv not found at', aq_path)
 
-    # import benmap
     ben_path = os.path.join('.', 'data', 'raw', 'NYNY_BenMAP.csv')
     if os.path.exists(ben_path):
         print('Loading', ben_path)
@@ -39,7 +35,6 @@ except Exception:
     print('pandas import failed or not available, falling back to CSV reader')
     try:
         cur = conn.cursor()
-        # create simple air_quality table if not exists
         cur.execute('''
         CREATE TABLE IF NOT EXISTS air_quality (
           unique_id INTEGER,
@@ -81,7 +76,6 @@ except Exception:
             with open(ben_path, newline='', encoding='utf-8') as f:
                 reader = csv.reader(f)
                 header = next(reader)
-                # create table with dynamic columns
                 cols = [f'"{c}" TEXT' for c in header]
                 cur.execute('DROP TABLE IF EXISTS benmap')
                 cur.execute('CREATE TABLE benmap (' + ','.join(cols) + ')')
