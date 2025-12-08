@@ -1,8 +1,8 @@
-# 🌟 Extras: Beyond Rubric Requirements
+# Extras: Beyond Rubric Requirements
 
 This folder contains **enhanced features and best practices** that go beyond the Phase 4 rubric requirements. These additions demonstrate industry-standard practices and advanced data science skills.
 
-## 📁 Contents
+## Contents
 
 ### 1. Interactive Dashboard (`create_dashboard.py`) ⚠️ Prototype
 **What it does**: Demonstrates how to create professional HTML dashboards with interactive Plotly visualizations.
@@ -71,7 +71,7 @@ pytest extras/tests/ -v
 
 ---
 
-## 🎯 Why These Extras?
+## Why These Extras?
 
 These enhancements address common pain points in data curation projects:
 
@@ -84,7 +84,7 @@ These enhancements address common pain points in data curation projects:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 To explore extras features:
 
@@ -106,20 +106,20 @@ pytest extras/tests/ -v
 
 ---
 
-## 📊 Impact on Grading
+## Impact on Grading
 
 While these features are **not required by the rubric**, they demonstrate:
 
-✨ **Technical Excellence**: Advanced Python skills beyond basic pandas/matplotlib  
-✨ **Professional Practices**: Industry-standard testing and CI/CD  
-✨ **User Focus**: Interactive visualizations for better accessibility  
-✨ **Open Science**: Contribution guidelines and collaborative mindset  
+**Technical Excellence**: Advanced Python skills beyond basic pandas/matplotlib  
+**Professional Practices**: Industry-standard testing and CI/CD  
+**User Focus**: Interactive visualizations for better accessibility  
+**Open Science**: Contribution guidelines and collaborative mindset  
 
 These additions may positively influence grading under "Quality" or "Going Beyond Requirements" criteria, potentially compensating for Phase 3 deductions.
 
 ---
 
-## 🎓 Learning Value
+## Learning Value
 
 These tools teach valuable skills for:
 - **Data Science Careers**: Dashboard creation, testing, automation
@@ -128,7 +128,7 @@ These tools teach valuable skills for:
 
 ---
 
-## ⚠️ Important Note
+## Important Note
 
 **The core Phase 4 submission is complete without this folder.** All rubric requirements are satisfied in the main project directory:
 
@@ -142,10 +142,6 @@ These tools teach valuable skills for:
 
 ---
 
-## 📞 Questions?
+## Questions?
 
 These enhancements are documented in case TAs want to explore them, but **they are not required for full credit**. The main submission stands on its own.
-
----
-
-*"Good data curation is reproducible. Great data curation is reproducible, testable, and accessible."*
